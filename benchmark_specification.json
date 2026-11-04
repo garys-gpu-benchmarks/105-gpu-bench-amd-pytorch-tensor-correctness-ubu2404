@@ -25,6 +25,11 @@
     "value": "gpu-bench-amd-pytorch-tensor-correctness-ubu2404"
   },
   {
+    "field_name": "Repo Directory Name",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "105-gpu-bench-amd-pytorch-tensor-correctness-ubu2404"
+  },
+  {
     "field_name": "Main Goal",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Analyze tensor op numerical correctness"
