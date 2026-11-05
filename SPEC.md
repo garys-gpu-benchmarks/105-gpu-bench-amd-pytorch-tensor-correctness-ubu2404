@@ -88,9 +88,9 @@ sample_index,status,op_name,dtype,shape,max_abs_error,max_rel_error,tolerance_co
 
 ```bash
 bash run_benchmark.sh --help
-bash run_benchmark.sh --profile smoke --validate
-bash run_benchmark.sh --profile baseline --validate
-bash run_benchmark.sh --profile extended --validate
+bash run_benchmark.sh --smoke --validate
+bash run_benchmark.sh --baseline --validate
+bash run_benchmark.sh --extended --validate
 ```
 `run_benchmark.sh --help` prints usage and exits. The harness calls `scripts/ensure_setup.sh` when `.setup_state` is absent.
 
