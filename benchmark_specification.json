@@ -140,6 +140,16 @@
     "value": "-"
   },
   {
+    "field_name": "Validation Objective",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Validates GPU matmul and conv2d accuracy against a CPU FP32 reference within rtol/atol for each dtype and shape"
+  },
+  {
+    "field_name": "Command Tools Executed",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d vs CPU FP32 per op, dtype, and shape"
+  },
+  {
     "field_name": "run_benchmark Command Plus Options for Smoke Run (One minute or less)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "bash run_benchmark.sh --smoke --validate --device-id 0 --op-name matmul,conv2d --dtype f16_r --shape matmul=1x128x128;conv2d=1x3x32x32 --rtol 0.02 --atol 0.1 --num-iterations 2 --seed 42"
@@ -155,29 +165,19 @@
     "value": "bash run_benchmark.sh --extended --validate --device-id 0 --op-name matmul,conv2d --dtype f16_r,bf16_r,f32_r --shape matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64 --rtol f16_r=0.02,bf16_r=0.02,f32_r=1e-05 --atol f16_r=0.1,bf16_r=0.5,f32_r=1e-03 --num-iterations 100 --seed 42"
   },
   {
-    "field_name": "Validation Objective",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Validates PyTorch GPU matmul/conv2d against CPU FP32 within rtol/atol. Does not run pytest"
-  },
-  {
-    "field_name": "Command Tools Executed",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run scripts/run_tensor_correctness.py in the repository .venv. Does not run pytest or official test_ops.py"
-  },
-  {
     "field_name": "Command Execution Details and Purpose",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness. Does not invoke pytest or GitHub test_ops.py"
+    "value": "Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness"
   },
   {
     "field_name": "Command Methodology",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "For each yaml op_name (matmul, conv2d), dtype, and shape, execute the GPU op, compare it to a CPU FP32 reference using atol and rtol, and emit max absolute error, max relative error, tolerance compliance, coverage, and failure count. Does not run pytest or GitHub test_ops.py"
+    "value": "For each yaml op_name (matmul, conv2d), dtype, and shape, execute the GPU op, compare it to a CPU FP32 reference using atol and rtol, and emit max absolute error, max relative error, tolerance compliance, coverage, and failure count"
   },
   {
     "field_name": "Execution Description With Parameters",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Compares GPU PyTorch matmul/conv2d against a CPU FP32 reference for each yaml op/dtype/shape. op_name: matmul or conv2d. dtype and shape: sweep values. rtol/atol: comparison gates (defaults 0.02 / 0.1). num_iterations: randomized inputs per case. seed and device_id: RNG and cuda:N. This is not pytest test_ops.py"
+    "value": "Compares GPU PyTorch matmul/conv2d against a CPU FP32 reference for each yaml op/dtype/shape. op_name: matmul or conv2d. dtype and shape: sweep values. rtol/atol: comparison gates (defaults 0.02 / 0.1). num_iterations: randomized inputs per case. seed and device_id: RNG and cuda:N"
   },
   {
     "field_name": "Execution Domain",
@@ -327,7 +327,7 @@
   {
     "field_name": "Known Runtime Constraints (<=35 Words Each)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Requires a PyTorch-ROCm venv. Reference is CPU FP32. This is a local collector, not pytest test_ops.py"
+    "value": "Requires a PyTorch-ROCm venv. Reference is CPU FP32"
   },
   {
     "field_name": "GPU Architecutre ID",
@@ -372,12 +372,12 @@
   {
     "field_name": "Installation and Execution Summary",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness. Does not invoke pytest or GitHub test_ops.py"
+    "value": "Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness"
   },
   {
     "field_name": "Workload Command Line Executable",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run scripts/run_tensor_correctness.py in the repository .venv. Does not run pytest or official test_ops.py"
+    "value": "Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d vs CPU FP32 per op, dtype, and shape"
   },
   {
     "field_name": "ROCm Version",
@@ -392,7 +392,7 @@
   {
     "field_name": "Execution Summary (Run and Measure)",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness. Does not invoke pytest or GitHub test_ops.py"
+    "value": "Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness"
   },
   {
     "field_name": "nVidia Porting Instructions (Reference Only)",
@@ -412,7 +412,7 @@
   {
     "field_name": "Profile Parameter Values",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Parameters_SmokeBaselineExtend",
-    "value": "{\"device_id\": {\"smoke\": \"0\", \"baseline\": \"0\", \"extended\": \"0\", \"notes\": \"\"}, \"op_name\": {\"smoke\": \"matmul,conv2d\", \"baseline\": \"matmul,conv2d\", \"extended\": \"matmul,conv2d\", \"notes\": \"Sweep/list value. Command column documents it; omit this flag so yaml expands cases.\"}, \"dtype\": {\"smoke\": \"f16_r\", \"baseline\": \"f16_r,bf16_r,f32_r\", \"extended\": \"f16_r,bf16_r,f32_r\", \"notes\": \"Sweep/list value. Command column documents it; omit this flag so yaml expands cases.\"}, \"shape\": {\"smoke\": \"matmul=1x128x128;conv2d=1x3x32x32\", \"baseline\": \"matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64\", \"extended\": \"matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64\", \"notes\": \"Sweep/list value. Command column documents it; omit this flag so yaml expands cases.\"}, \"rtol\": {\"smoke\": \"0.02\", \"baseline\": \"f16_r=0.02,bf16_r=0.02,f32_r=1e-05\", \"extended\": \"f16_r=0.02,bf16_r=0.02,f32_r=1e-05\", \"notes\": \"Sweep/list value. Command column documents it; omit this flag so yaml expands cases.\"}, \"atol\": {\"smoke\": \"0.1\", \"baseline\": \"f16_r=0.1,bf16_r=0.5,f32_r=1e-03\", \"extended\": \"f16_r=0.1,bf16_r=0.5,f32_r=1e-03\", \"notes\": \"FP32 8x512x512 uses atol 1e-3. Sweep/list flags are documentary; omit them so yaml expands. Sweep/list value. Command column documents it; omit this flag so yaml expands cases.\"}, \"num_iterations\": {\"smoke\": \"2\", \"baseline\": \"50\", \"extended\": \"100\", \"notes\": \"VM 2026-08-16 num_iterations=700 -> 187s (3:07). Extended 2250 extrapolated ~10:00, not tested.\"}, \"seed\": {\"smoke\": \"42\", \"baseline\": \"42\", \"extended\": \"42\", \"notes\": \"\"}}"
+    "value": "{\"device_id\": {\"smoke\": \"0\", \"baseline\": \"0\", \"extended\": \"0\"}, \"op_name\": {\"smoke\": \"matmul,conv2d\", \"baseline\": \"matmul,conv2d\", \"extended\": \"matmul,conv2d\"}, \"dtype\": {\"smoke\": \"f16_r\", \"baseline\": \"f16_r,bf16_r,f32_r\", \"extended\": \"f16_r,bf16_r,f32_r\"}, \"shape\": {\"smoke\": \"matmul=1x128x128;conv2d=1x3x32x32\", \"baseline\": \"matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64\", \"extended\": \"matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64\"}, \"rtol\": {\"smoke\": \"0.02\", \"baseline\": \"f16_r=0.02,bf16_r=0.02,f32_r=1e-05\", \"extended\": \"f16_r=0.02,bf16_r=0.02,f32_r=1e-05\"}, \"atol\": {\"smoke\": \"0.1\", \"baseline\": \"f16_r=0.1,bf16_r=0.5,f32_r=1e-03\", \"extended\": \"f16_r=0.1,bf16_r=0.5,f32_r=1e-03\"}, \"num_iterations\": {\"smoke\": \"2\", \"baseline\": \"50\", \"extended\": \"100\"}, \"seed\": {\"smoke\": \"42\", \"baseline\": \"42\", \"extended\": \"42\"}}"
   },
   {
     "field_name": "Profile Command Authorship",

@@ -20,7 +20,7 @@ Compares GPU PyTorch matmul/conv2d against a CPU FP32 reference for each yaml op
 ## Invocation
 
 ```bash
-Run scripts/run_tensor_correctness.py in the repository .venv. Does not run pytest or official test_ops.py
+Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d vs CPU FP32 per op, dtype, and shape
 ```
 
 ## Raw Output Format
@@ -44,12 +44,12 @@ Compares GPU PyTorch matmul/conv2d against a CPU FP32 reference for each yaml op
 
 ## Installation and Execution Summary
 
-Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness. Does not invoke pytest or GitHub test_ops.py
+Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness
 
 ## Platform Portability
 
 - **AMD (primary):** ```bash
-Run scripts/run_tensor_correctness.py in the repository .venv. Does not run pytest or official test_ops.py
+Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d vs CPU FP32 per op, dtype, and shape
 ```
 - **NVIDIA:** Primary target is AMD ROCm. NVIDIA notes in this section are reference only and are not the execution path.
 

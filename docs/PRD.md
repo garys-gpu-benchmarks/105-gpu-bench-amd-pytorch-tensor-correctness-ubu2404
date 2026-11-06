@@ -15,13 +15,13 @@ This PRD.md section is populated from benchmark_specification.json, which is the
 PyTorch Tensor Op Correctness Suite
 
 ## Execution Summary (Run and Measure)
-Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness. Does not invoke pytest or GitHub test_ops.py
+Run local PyTorch GPU matmul and conv2d for each yaml op_name/dtype/shape, compare each result to a CPU FP32 reference using rtol/atol, and emit error counts, to measure tensor-op numerical correctness
 
 ## Main Goal
 Analyze tensor op numerical correctness
 
 ## Validation Objective
-Validates PyTorch GPU matmul/conv2d against CPU FP32 within rtol/atol. Does not run pytest
+Validates GPU matmul and conv2d accuracy against a CPU FP32 reference within rtol/atol for each dtype and shape
 
 ## Workload Category
 Compute & Math Kernels
