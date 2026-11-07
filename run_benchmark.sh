@@ -32,10 +32,19 @@ Profiles (default: --smoke):
 Parameters (override the profile's value):
   --device-id <value>           Target accelerator or device identifier (smoke/baseline/extended: 0)
   --op-name <value>             Shared workload parameter (smoke/baseline/extended: matmul,conv2d)
-  --dtype <value>               Tensor, element, or storage data type (smoke f16_r, baseline f16_r,bf16_r,f32_r, extended f16_r,bf16_r,f32_r)
-  --shape <value>               Shared workload parameter (smoke matmul=1x128x128;conv2d=1x3x32x32, baseline matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64, extended matmul=1x128x128,8x512x512;conv2d=1x3x32x32,8x3x64x64)
-  --rtol <value>                Shared workload parameter (smoke 0.02, baseline f16_r=0.02,bf16_r=0.02,f32_r=1e-05, extended f16_r=0.02,bf16_r=0.02,f32_r=1e-05)
-  --atol <value>                Shared workload parameter (smoke 0.1, baseline f16_r=0.1,bf16_r=0.5,f32_r=1e-03, extended f16_r=0.1,bf16_r=0.5,f32_r=1e-03)
+  --dtype <value>               Tensor, element, or storage data type
+                                  smoke:             f16_r
+                                  baseline/extended: f16_r,bf16_r,f32_r
+  --shape <value>               Shared workload parameter
+                                  smoke:             matmul=1x128x128;conv2d=1x3x32x32
+                                  baseline/extended: matmul=1x128x128,8x512x512;conv2d=1x3x32x32,
+                                                     8x3x64x64
+  --rtol <value>                Shared workload parameter
+                                  smoke:             0.02
+                                  baseline/extended: f16_r=0.02,bf16_r=0.02,f32_r=1e-05
+  --atol <value>                Shared workload parameter
+                                  smoke:             0.1
+                                  baseline/extended: f16_r=0.1,bf16_r=0.5,f32_r=1e-03
   --num-iterations <n>          Number of timed repetitions (smoke 2, baseline 50, extended 100)
   --seed <n>                    Random seed used for reproducibility (smoke/baseline/extended: 42)
 
