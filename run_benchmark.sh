@@ -16,12 +16,11 @@ capture_benchmark_run_command_submitted "$@"
 
 usage() {
   cat <<'USAGE'
+
 Usage: bash run_benchmark.sh [OPTIONS]
 
 Workload Name:          PyTorch Tensor Op Correctness Suite.
 Main Goal:              Analyze tensor op numerical correctness.
-Validation Objective:   Validates GPU matmul and conv2d accuracy against a CPU FP32 reference within
-                        rtol/atol for each dtype and shape.
 Command Tools Executed: Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d
                         vs CPU FP32 per op, dtype, and shape.
 
