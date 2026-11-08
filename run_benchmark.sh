@@ -19,10 +19,10 @@ usage() {
 
 Usage: bash run_benchmark.sh [OPTIONS]
 
-Workload Name:          PyTorch Tensor Op Correctness Suite.
-Main Goal:              Analyze tensor op numerical correctness.
+Workload Name:          PyTorch Tensor Op Correctness Suite
+Main Goal:              Analyze tensor op numerical correctness
 Command Tools Executed: Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d
-                        vs CPU FP32 per op, dtype, and shape.
+                        vs CPU FP32 per op, dtype, and shape
 
 Profiles (default: --smoke):
   --smoke                       Run smoke profile

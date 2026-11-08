@@ -205,14 +205,14 @@
     "value": "MI300X"
   },
   {
-    "field_name": "Raw Output Format",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "CSV with one row per op/dtype/shape case"
-  },
-  {
     "field_name": "Primary Record Granularity",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "one row per op, dtype, and shape combination"
+  },
+  {
+    "field_name": "Raw Output Format",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "CSV with one row per op/dtype/shape case"
   },
   {
     "field_name": "Raw Output Example",
@@ -225,14 +225,14 @@
     "value": "max_abs_error, max_rel_error, tolerance_compliance, coverage_count, failure_count"
   },
   {
-    "field_name": "Success Criteria",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "run_benchmark exits 0 and every case row has finite max_abs_error, max_rel_error, and tolerance_compliance"
-  },
-  {
     "field_name": "Parser and Normalization Notes",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "The reference is CPU FP32. Default atol is 0.1 and rtol is 0.02 unless yaml overrides them. max_rel_error is the difference norm divided by max(reference norm, atol). tolerance_compliance is the percent of elements inside atol + rtol * |reference|"
+  },
+  {
+    "field_name": "Success Criteria",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "run_benchmark exits 0 and every case row has finite max_abs_error, max_rel_error, and tolerance_compliance"
   },
   {
     "field_name": "Hardware Config",
