@@ -40,6 +40,11 @@
     "value": "Run scripts/run_tensor_correctness.py in the repo .venv: GPU matmul/conv2d vs CPU FP32 per op, dtype, and shape"
   },
   {
+    "field_name": "Execution Description With Parameters",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Compares GPU PyTorch matmul/conv2d against a CPU FP32 reference for each yaml op/dtype/shape. op_name: matmul or conv2d. dtype and shape: sweep values. rtol/atol: comparison gates (defaults 0.02 / 0.1). num_iterations: randomized inputs per case. seed and device_id: RNG and cuda:N"
+  },
+  {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "#1: Max absolute error across correctness cases (max_abs_error); #2: Maximum relative L2 error (max_rel_error); #3: Tolerance-compliant case percentage (tolerance_compliance); #4: Test case coverage count (coverage_count); #5: Test case failure count (failure_count)"
@@ -173,11 +178,6 @@
     "field_name": "Command Methodology",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "For each yaml op_name (matmul, conv2d), dtype, and shape, execute the GPU op, compare it to a CPU FP32 reference using atol and rtol, and emit max absolute error, max relative error, tolerance compliance, coverage, and failure count"
-  },
-  {
-    "field_name": "Execution Description With Parameters",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Compares GPU PyTorch matmul/conv2d against a CPU FP32 reference for each yaml op/dtype/shape. op_name: matmul or conv2d. dtype and shape: sweep values. rtol/atol: comparison gates (defaults 0.02 / 0.1). num_iterations: randomized inputs per case. seed and device_id: RNG and cuda:N"
   },
   {
     "field_name": "Execution Domain",
