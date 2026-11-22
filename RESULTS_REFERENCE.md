@@ -11,9 +11,9 @@ Reference results from the validation run on the system shown in each section (r
 ## smoke
 
 - **System:** 1× AMD Instinct MI300X VF (196288 MB) · INTEL(R) XEON(R) PLATINUM 8568Y+ · Ubuntu 24.04.5 LTS · kernel 6.8.0-149-generic · driver 7.1.9.31600000
-- **Run:** 2026-11-22T10:49:52Z · status **PASS** (exit 0)
-- **Time (mm:ss):** setup 00:55 · benchmark 00:13 · whole run 01:21
-- **Source:** run 105_20261122_104952
+- **Run:** 2026-11-22T14:13:37Z · status **PASS** (exit 0)
+- **Time (mm:ss):** setup 00:57 · benchmark 00:13 · whole run 01:22
+- **Source:** run 105_20261122_141337
 - **Command:** `bash run_benchmark.sh --smoke --device-id 0 --op-name matmul,conv2d --dtype f16_r --shape matmul=1x128x128;conv2d=1x3x32x32 --rtol 0.02 --atol 0.1 --num-iterations 2 --seed 42`
 
 | # | Metric | Result |
